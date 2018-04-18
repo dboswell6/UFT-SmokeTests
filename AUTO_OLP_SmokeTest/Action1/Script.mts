@@ -24,12 +24,12 @@ Environment.Value("ENV_Screenshot_Loc") = "C:\Temp\image.bmp"
 'launching URL
 LaunchURL(vURL)
 Set vURL = Nothing
-' call the eAuth login function and pass it the UserID and Password
+' call the eAuth login function and pass it the UserID  nd Password
 eAuthLogin vUserID, vPassword
 Set vUserID = Nothing 
 Set vPassword = Nothing
 ' check to see if the application loads.  if not, mark the smoke test as fail and end the script
-If Not Browser("name:=Online Payment Welcome").exist(60) Then	' home page takes exceptionally long to load
+If Not Browser("name:=Online Payment Welcome").exist(60) Then	' home    page takes exceptionally long to load
 	Browser("Creationtime:=0").CaptureBitmap Environment.Value("ENV_Screenshot_Loc"), True
 	Reporter.ReportEvent micFail, "OLP Smoke Test", "The OLP page did not load.  Smoke Test failed.", Environment.Value("ENV_Screenshot_Loc")
 	CloseBrowser("iexplore.exe")

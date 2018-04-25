@@ -40,7 +40,9 @@ Browser("name:=Online Payment Welcome").Page("title:=Online Payment Welcome").Li
 	With Browser("name:=Online Payment").Page("title:=Online Payment")
 		.Sync
 		.WebEdit("name:=paymentId").Set "480479"
-		.webButton("outerhtml:=<INPUT onclick=""setAction\(this\.form,'Search2'\);"" title=""Search payment record"" type=submit value=Search name=buttonAction>").Click
+		Browser("Online Payment").Page("Online Payment_2").WebButton("Search").Click
+
+'		.webButton("outerhtml:=<INPUT onclick=""setAction\(this\.form,'Search2'\);"" title=""Search payment record"" type=submit value=Search name=buttonAction>").Click
 	' ============================ Action ends here ==================================================================
 ' reporting with screenshot
 		If .Webtable("column names:=ALEC J SMITH;Payment ID:;52398292").Exist(30) Then ' check for existence of database results.  usually a table or page of results
